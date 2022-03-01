@@ -1,7 +1,7 @@
 "
 " link function 
 "
-" Last Change: 2013-09-10 10:50:44
+" Last Change: Y2022-M03-D01 
 
 function! mwiki#link#Action(bool)
     let g:cursorStr = mwiki#function#GetCursorString("true")
