@@ -3,7 +3,7 @@
 "
 " Last Change: 2013-09-10 10:50:44
 
-function! mwiki#link#Action()
+function! mwiki#link#Action(bool)
     let g:cursorStr = mwiki#function#GetCursorString("true")
     if mwiki#link#Is(g:cursorStr) == 1
         let path = mwiki#link#GetLocation(g:cursorStr)
@@ -13,8 +13,16 @@ function! mwiki#link#Action()
             echo "this link not end with .md"
         endif
     else
-        let link = mwiki#link#Create(g:cursorStr)
-        call mwiki#common#ReplaceCursorStr(link)
+        if(a:bool==1)
+			echo "calling make link"
+            let link = mwiki#link#Create(g:cursorStr)
+            call mwiki#common#ReplaceCursorStr(link)
+        else
+			echo "calling make folder"
+            let link = mwiki#link#CreateFolder(g:cursorStr)
+			echo "link is - ".link
+            call mwiki#common#ReplaceCursorStr(link)
+		endif
     endif
 endfunction
 
@@ -36,11 +44,31 @@ function! mwiki#link#Create(word)
     let linkName = a:word
     if mwiki#link#IsUrl(a:word)
         let link = "[".linkName."](".a:word.")"
+		return link
+
     else
         let link = "[".linkName."](".a:word.".md)"
+		return link
     endif
-    return link
+	echo "this should never appear"
 endfunction
+
+function! mwiki#link#CreateFolder(word)
+   let linkLink = a:word."/index" 
+   let linkName = a:word
+   echo "linkLink and linkName".linkLink." ".linkName
+   if mwiki#link#IsUrl(linkLink)
+	   echo "link is url".linkLink." ".linkName
+       let link = "[".linkName."](".linkLink.")"
+
+   else
+   	   echo "link is not url".linkLink." ".linkName
+
+       let link = "[".linkName."](".linkLink.".md)"
+
+	endif
+	return link
+endfunction    
 
 " jump link locate file
 function! mwiki#link#Enter(path)
@@ -57,6 +85,8 @@ function! mwiki#link#Enter(path)
     let g:mwikiEnterLinkStack = add(g:mwikiEnterLinkStack, expand("%:p")."@pos".join(getpos("."),","))
 
     execute "edit ".escape(a:path, " ")
+	:lcd %:p:h
+
 endfunction
 
 " get link location
