@@ -44,13 +44,10 @@ function! mwiki#link#Create(word)
     let linkName = a:word
     if mwiki#link#IsUrl(a:word)
         let link = "[".linkName."](".a:word.")"
-		return link
-
     else
         let link = "[".linkName."](".a:word.".md)"
-		return link
     endif
-	echo "this should never appear"
+    return link
 endfunction
 
 function! mwiki#link#CreateFolder(word)
