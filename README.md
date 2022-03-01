@@ -12,6 +12,8 @@ so that files save in the correct wiki-folder.
 #### 2: <S-CR> /shift-enter creates a link to a folder - adding the "index.md" suffix. example/index.md
 this creates a link to a subfolder. clearing the namespace for filenames.
 
+
+# readme as from h2ero - (besides Plug 'altruios/vim-markdown-wiki-folders' being changed)
 this plug has  a lot of functions are referenced from  [vimwiki](https://github.com/vimwiki/vimwiki).
 
 record: [https://asciinema.org/a/dti9cfipk4lvdjxh8feeov860](https://asciinema.org/a/dti9cfipk4lvdjxh8feeov860)
@@ -20,11 +22,11 @@ record: [https://asciinema.org/a/dti9cfipk4lvdjxh8feeov860](https://asciinema.or
 ### .vimrc 
 ``` viml
     Plug 'tpope/vim-markdown'
-    Plug 'h2ero/vim-markdown-wiki'
+    Plug 'altruios/vim-markdown-wiki-folders'
     let g:mwikiTableAlign = "left"
     let g:mwikis = [ {'path':$HOME.'/wiki1/'}, {'path':$HOME.'/wiki2/'} ]
 ```
-
+    
 ## Feature
 
 ### Link
