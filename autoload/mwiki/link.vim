@@ -14,15 +14,12 @@ function! mwiki#link#Action(bool)
         endif
     else
         if(a:bool==1)
-			echo "calling make link"
             let link = mwiki#link#Create(g:cursorStr)
             call mwiki#common#ReplaceCursorStr(link)
         else
-			echo "calling make folder"
             let link = mwiki#link#CreateFolder(g:cursorStr)
-			echo "link is - ".link
             call mwiki#common#ReplaceCursorStr(link)
-		endif
+	endif
     endif
 endfunction
 
