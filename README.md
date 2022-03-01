@@ -2,7 +2,7 @@
 markdown wiki folders pulgin for vim 
 
 
-this plug is pulled from and only has 2 changes: 1 new function and 1 new behavior 
+this plug is pulled from [https://github.com/h2ero/vim-markdown-wiki](https://github.com/h2ero/vim-markdown-wiki) and only has 2 changes: 1 new function and 1 new behavior 
 1: when you enter a link - it sets the current working directory to that file (so file save correctly in the folder you are in)
 2: SHIFT enter creates a link to a folder - adding the "index.md" suffix.
 
