@@ -1,5 +1,13 @@
-# vim markdown wiki
-markdown wiki pulgin for vim 
+# vim markdown wiki folders
+markdown wiki folders pulgin for vim 
+
+
+this plug is pulled from and only has 2 changes: 1 new function and 1 new behavior 
+1: when you enter a link - it sets the current working directory to that file (so file save correctly in the folder you are in)
+2: SHIFT enter creates a link to a folder - adding the "index.md" suffix.
+
+the value of this is you can have multiple wikifiles of the same name, in different folders. easily create folders for the wiki. while maintained the same easy navigation.
+
 
 this plug has  a lot of functions are referenced from  [vimwiki](https://github.com/vimwiki/vimwiki).
 
