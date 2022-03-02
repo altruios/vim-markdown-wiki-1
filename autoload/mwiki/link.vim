@@ -50,18 +50,12 @@ endfunction
 function! mwiki#link#CreateFolder(word)
    let linkLink = a:word."/index" 
    let linkName = a:word
-   echo "linkLink and linkName".linkLink." ".linkName
    if mwiki#link#IsUrl(linkLink)
-	   echo "link is url".linkLink." ".linkName
        let link = "[".linkName."](".linkLink.")"
-
    else
-   	   echo "link is not url".linkLink." ".linkName
-
        let link = "[".linkName."](".linkLink.".md)"
-
-	endif
-	return link
+   endif
+   return link
 endfunction    
 
 " jump link locate file
