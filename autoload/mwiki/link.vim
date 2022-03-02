@@ -89,6 +89,7 @@ function! mwiki#link#GoToLast()
         execute "edit ".res[0]
         call setpos(".",split(res[1], ","))
         unlet g:mwikiEnterLinkStack[len(g:mwikiEnterLinkStack)-1]
+	:lcd %:p:h
     else
         echo "this is a last you enter item file."
     endif
