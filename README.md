@@ -9,7 +9,7 @@ markdown wiki folders pulgin for vim
 #### 1: when a link is entered-the current working directory is set to that file
 so that files save in the correct wiki-folder.
 
-#### 2: <S-CR> shift-enter creates a link to a folder - adding the "index.md" suffix. example/index.md
+#### 2: \<S-CR\> shift-enter creates a link to a folder - adding the "index.md" suffix. example/index.md
 this creates a link to a subfolder. clearing the namespace for filenames.
 
 
