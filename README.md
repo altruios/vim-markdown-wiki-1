@@ -1,9 +1,11 @@
 # vim markdown wiki folders
+
 markdown wiki folders pulgin for vim 
 
+## TODO
+    - add meta-data support and toogle function
 
-## this plug is pulled from [https://github.com/h2ero/vim-markdown-wiki](https://github.com/h2ero/vim-markdown-wiki) 
-
+### this plug is pulled from [https://github.com/h2ero/vim-markdown-wiki](https://github.com/h2ero/vim-markdown-wiki) 
 ### and only has 2 changes: 1 new function and 1 new behavior 
 
 #### 1: when a link is entered-the current working directory is set to that file
